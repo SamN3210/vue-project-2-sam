@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Home Page</h1>
+    <h1>Welcome to my Pokemon website. Here you can look at Pokemon by their region and/or search up Pokemon by their name!</h1>
   </div>
 </template>
 
@@ -10,6 +10,6 @@
 export default {
   name: 'HomeView',
   components: {
-  }
+  },
 }
 </script>
