@@ -25,7 +25,7 @@ export default {
 .router-link,
 .router-link:visited,
 .router-link:link {
-    background-color: aliceblue;
+    background-color: #6279B8;
     color: black;
     width: 22%;
     border-radius: 10px;

@@ -13,6 +13,9 @@
 #app {
   text-align: center;
 }
+body {
+  background-color: #8EA4D2;
+}
 nav {
   padding: 30px;
 }
