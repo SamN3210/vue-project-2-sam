@@ -18,6 +18,7 @@
             >
         </p>
     </form>
+    <h2></h2>
   </div>
 </template>
 
@@ -35,12 +36,13 @@ export default {
       }
   },
   methods: {
-      fetchData: async function(){
+      fetchData: async function(e){
         try {
+            e.preventDefault();
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.name}`);
             const data = await response.json();
             this.PokemonData = data;
-            return this.PokemonData;
+            console.log(this.PokemonData);
         }
         catch (error) {
             console.log("error");
