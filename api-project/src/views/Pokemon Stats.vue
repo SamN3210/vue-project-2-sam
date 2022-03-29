@@ -2,7 +2,7 @@
   <div class="stats-container">
     <h1>This is a stats page</h1>
     <h2>{{PokemonData.name}}</h2>
-    <img :src="spriteFront" alt=""/>
+    <img :src="this.PokemonData.sprites.front_default" alt=""/>
   </div>
 </template>
 
@@ -27,14 +27,14 @@ export default {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.$route.params.id}`);
             const data = await response.json();
             this.PokemonData = data;
+            console.log(this.PokemonData);
+            console.log(this.PokemonData.sprites.front_default)
             return this.PokemonData;
         }
         catch (error) {
             console.log("error");
         }
     }
-  },
-  computed: {
   },
 }
 </script>

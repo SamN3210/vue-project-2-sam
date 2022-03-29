@@ -18,7 +18,11 @@
             >
         </p>
     </form>
-    <h2></h2>
+    <div v-if="dataReturned">
+      <h2>{{PokemonData.name}}</h2>
+      <h2>{{PokemonData.id}}</h2>
+    </div>
+    <h2 v-else>Wrong Input. Please Try Again.</h2>
   </div>
 </template>
 
@@ -33,21 +37,31 @@ export default {
       return{
           name: "",
           PokemonData: {},
+          dataReturned: true,
       }
   },
   methods: {
       fetchData: async function(e){
         try {
             e.preventDefault();
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.name}`);
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.name.toLowerCase()}`);
             const data = await response.json();
             this.PokemonData = data;
             console.log(this.PokemonData);
+            this.dataReturned = true;
+            return this.PokemonData;
         }
         catch (error) {
             console.log("error");
+            this.dataReturned = false;
         }
-    }
+    },
   },
 }
 </script>
+
+<style scoped>
+h2{
+    text-transform: capitalize;
+}
+</style>
