@@ -30,7 +30,7 @@ const routes = [
     },
   },
   {
-    path: "/PokemonInfo/:id",
+    path: "/pokemoninfo/:id",
     name: "PokemonInfo",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
