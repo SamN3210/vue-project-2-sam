@@ -2,8 +2,8 @@
   <nav>
     <div class="flex-container">
       <button><router-link to="/">Home</router-link></button>
-      <button><router-link to="/RegionView">Pokedex</router-link></button>
-      <button><router-link to="/SearchView">Search Pokemon</router-link></button>
+      <button><router-link to="/regions">Pokedex</router-link></button>
+      <button><router-link to="/search">Search Pokemon</router-link></button>
     </div>
   </nav>
   <router-view/>

@@ -1,21 +1,17 @@
 <template>
-    <router-link :to="pokemonPath" class="router-link">
-        <div class="pokemon-card">
-            <h1>{{pokemon.name}}</h1>
-            <h2>{{index + 1}}</h2>
-        </div>
+    <router-link :to="regionPath" class="router-link">
+        <button>{{region}}</button>
     </router-link>
 </template>
 
 <script>
 export default {
     props: {
-        pokemon: Object,
-        index: Number,
+        region: String,
     },
     computed: {
-        pokemonPath: function() {
-            return `/pokemoninfo/${this.index +1}`
+        regionPath: function() {
+            return `/pokemons/${this.region.toLowerCase()}`
         }
     }
 }

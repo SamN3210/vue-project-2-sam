@@ -1,8 +1,12 @@
 <template>
-  <div class="stats-container">
+  <div>
     <h1>This is a stats page</h1>
-    <h2>{{PokemonData.name}}</h2>
-    <img :src="spriteFront" alt=""/>
+    <div v-if="dataReturned">
+      <h2>{{PokemonData.name}}</h2>
+      <h2>{{PokemonData.id}}</h2>
+      <img :src="spriteFront" alt=""/>
+    </div>
+    <h2 v-else></h2>
   </div>
 </template>
 
@@ -16,6 +20,7 @@ export default {
   data(){
       return{
           PokemonData: {},
+          dataReturned: false,
       }
   },
   mounted: function (){
@@ -29,10 +34,12 @@ export default {
             this.PokemonData = data;
             console.log(this.PokemonData);
             console.log(this.PokemonData.sprites.front_default)
+            this.dataReturned = true;
             return this.PokemonData;
         }
         catch (error) {
             console.log("error");
+            this.dataReturned = true;
         }
     }
   },
@@ -45,12 +52,6 @@ export default {
 </script>
 
 <style scoped>
-.stats-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
 h2{
     text-transform: capitalize;
 }

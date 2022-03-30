@@ -23,7 +23,7 @@
       <h2>{{PokemonData.id}}</h2>
       <img :src="spriteFront" alt=""/>
     </div>
-    <h2 v-else>Wrong Input. Please Try Again.</h2>
+    <h2 v-else>Enter a correct Pokemon Name.</h2>
   </div>
 </template>
 
@@ -36,9 +36,9 @@ export default {
   },
   data(){
       return{
-          name: "",
+          name: null,
           PokemonData: {},
-          dataReturned: true,
+          dataReturned: false,
       }
   },
   methods: {
