@@ -2,7 +2,7 @@
   <div class="stats-container">
     <h1>This is a stats page</h1>
     <h2>{{PokemonData.name}}</h2>
-    <img :src="this.PokemonData.sprites.front_default" alt=""/>
+    <img :src="spriteFront" alt=""/>
   </div>
 </template>
 
@@ -36,6 +36,11 @@ export default {
         }
     }
   },
+  computed: {
+    spriteFront: function(){
+      return this.PokemonData.sprites.front_default;
+    }
+  }
 }
 </script>
 
