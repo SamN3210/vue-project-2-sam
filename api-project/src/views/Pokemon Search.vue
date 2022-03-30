@@ -21,6 +21,7 @@
     <div v-if="dataReturned">
       <h2>{{PokemonData.name}}</h2>
       <h2>{{PokemonData.id}}</h2>
+      <img :src="this.PokemonData.sprites.front_default" alt=""/>
     </div>
     <h2 v-else>Wrong Input. Please Try Again.</h2>
   </div>
