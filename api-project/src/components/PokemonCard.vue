@@ -1,7 +1,7 @@
 <template>
     <router-link :to="pokemonPath" class="router-link">
         <div class="pokemon-card">
-            <h1>{{pokemon.name}}</h1>
+            <h1>{{pokemon.pokemon_species.name}}</h1>
             <h2>{{index + 1}}</h2>
         </div>
     </router-link>
@@ -27,7 +27,7 @@ export default {
 .router-link:link {
     background-color: #6279B8;
     color: black;
-    width: 22%;
+    width: 15%;
     border-radius: 10px;
     margin: 1rem;
     padding: 1rem 1rem;

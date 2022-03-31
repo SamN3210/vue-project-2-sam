@@ -39,8 +39,9 @@ export default {
     fetchData: async function(){
       try {
         const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0");
+        const response = await fetch("https://pokeapi.co/api/v2/pokedex/national");
         const data = await response.json();
-        this.pokemons = data.results;
+        this.pokemons = data.pokemon_entries;
         console.log(this.pokemons);
       }
       catch (error) {
