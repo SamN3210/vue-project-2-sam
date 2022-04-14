@@ -1,6 +1,6 @@
 <template>
     <router-link :to="regionPath" class="router-link">
-        <button>{{region}}</button>
+        <button @click="$emit('link')">{{region}}</button>
     </router-link>
 </template>
 
