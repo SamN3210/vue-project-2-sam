@@ -1,4 +1,9 @@
 <template>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
   <nav>
     <div class="flex-container">
       <button><router-link to="/">Home</router-link></button>
@@ -10,6 +15,9 @@
 </template>
 
 <style>
+html, body, * {
+  font-family: 'Mukta', sans-serif;
+}
 #app {
   text-align: center;
 }
