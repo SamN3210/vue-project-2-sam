@@ -60,7 +60,7 @@ export default {
   },
   computed: {
     spriteFront: function(){
-      return this.PokemonData.sprites.front_default;
+      return `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${this.PokemonData.id.toString().padStart(3, "0")}.png`;
     }
   }
 }
