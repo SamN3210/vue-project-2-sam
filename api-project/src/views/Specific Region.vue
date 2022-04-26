@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is a region page</h1>
+    <h1>This is a specific region page</h1>
     <div class="flex-container">
       <PokemonCard
       v-for="(pokemon, index) in pokemons"
@@ -28,9 +28,9 @@ export default {
   methods:{
     fetchData: async function(){
       try {
-        const response = await fetch("https://pokeapi.co/api/v2/pokedex/national");
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0");
         const data = await response.json();
-        this.pokemons = data.pokemon_entries;
+        this.pokemons = data.results;
         console.log(this.pokemons);
       }
       catch (error) {

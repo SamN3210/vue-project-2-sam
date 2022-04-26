@@ -31,13 +31,25 @@ const routes = [
   },
   {
     path: "/pokemoninfo/:id",
-    name: "SpecificRegionView",
+    name: "PokemonInfoView",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: function () {
       return import(
         /* webpackChunkName: "about" */ "../views/Pokemon Stats.vue"
+      );
+    },
+  },
+  {
+    path: "/pokemons/:region",
+    name: "SpecificRegionView",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(
+        /* webpackChunkName: "about" */ "../views/Specific Region.vue"
       );
     },
   },
