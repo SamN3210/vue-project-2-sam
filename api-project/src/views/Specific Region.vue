@@ -2,7 +2,7 @@
   <div class="about">
     <h1>This is a specific region page</h1>
     <div class="flex-container">
-      <PokemonCard
+      <SpecificCard
       v-for="(pokemon, index) in pokemons"
       :key="pokemon.name"
       :pokemon="pokemon"
@@ -14,11 +14,11 @@
 
 <script>
 // @ is an alias to /src
-import PokemonCard from "../components/PokemonCard.vue"
+import SpecificCard from "../components/SpecificCard.vue"
 export default {
   name: 'SpecificRegionView',
   components: {
-    PokemonCard,
+    SpecificCard,
   },
   data(){
     return{
