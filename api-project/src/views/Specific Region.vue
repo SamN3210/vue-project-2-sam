@@ -28,7 +28,8 @@ export default {
   methods:{
     fetchData: async function(){
       try {
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151&offset=151");
+        let baseurl = "https://pokeapi.co/api/v2/pokemon?"
+        const response = await fetch(baseurl.concat("limit=151&offset=151"));
         const data = await response.json();
         this.pokemons = data.results;
         console.log(this.pokemons);
@@ -36,7 +37,7 @@ export default {
       catch (error) {
         console.log("error");
       }
-    }
+    },
   },
   created: function (){
     this.fetchData();
