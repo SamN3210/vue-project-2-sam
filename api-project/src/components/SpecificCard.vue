@@ -2,7 +2,7 @@
     <router-link :to="pokemonPath" class="router-link">
         <div class="pokemon-card">
             <h1>{{pokemon.name}}</h1>
-            <h2>{{index + 1}}</h2>
+            <h2>{{numberPath}}</h2>
         </div>
     </router-link>
 </template>
@@ -15,7 +15,12 @@ export default {
     },
     computed: {
         pokemonPath: function() {
-            return `/pokemoninfo/${this.index +1}`
+            return `/pokemoninfo/${this.numberPath}`
+        },
+        numberPath: function() {
+            let str = this.pokemon.url
+            let arr = str.split('/');
+            return arr[arr.length-2]
         }
     }
 }
