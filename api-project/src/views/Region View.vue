@@ -32,7 +32,7 @@ export default {
   data(){
     return{
       pokemons: [],
-      regions: ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar", "All"],
+      regions: ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar"],
     }
   },
   methods:{
