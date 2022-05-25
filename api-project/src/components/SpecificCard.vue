@@ -1,8 +1,8 @@
 <template>
     <router-link :to="pokemonPath" class="router-link">
         <div class="pokemon-card">
-            <h1>{{pokemon.name}}</h1>
-            <h2>#{{this.numberPath.toString().padStart(3, "0")}}</h2>
+            <h2>{{pokemon.name}}</h2>
+            <h3>#{{this.numberPath.toString().padStart(3, "0")}}</h3>
             <img class="sprite" :src="iconSprite"/>
         </div>
     </router-link>
@@ -36,12 +36,12 @@ export default {
 .router-link:link {
     background-color: #6279B8;
     color: black;
-    width: 15%;
+    width: 10%;
     border-radius: 10px;
     margin: 1rem;
     padding: 1rem 1rem;
 }
-h1{
+h2{
     text-transform: capitalize;
 }
 </style>
