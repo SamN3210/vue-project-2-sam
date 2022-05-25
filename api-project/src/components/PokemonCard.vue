@@ -2,7 +2,8 @@
     <router-link :to="pokemonPath" class="router-link">
         <div class="pokemon-card">
             <h1>{{pokemon.pokemon_species.name}}</h1>
-            <h2>{{index + 1}}</h2>
+            <h2>#{{pokemonNumber.toString().padStart(3, "0")}}</h2>
+            <img class="sprite" :src="iconSprite"/>
         </div>
     </router-link>
 </template>
@@ -16,6 +17,12 @@ export default {
     computed: {
         pokemonPath: function() {
             return `/pokemoninfo/${this.index +1}`
+        },
+        pokemonNumber: function() {
+            return this.index + 1
+        },
+        iconSprite: function() {
+            return `https://img.pokemondb.net/sprites/sword-shield/icon/${this.pokemon.pokemon_species.name}.png`
         }
     }
 }

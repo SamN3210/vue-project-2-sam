@@ -21,7 +21,7 @@
     <div v-if="dataReturned">
       <h2>{{PokemonData.name}}</h2>
       <h2>{{PokemonData.id}}</h2>
-      <img :src="spriteFront" alt=""/>
+      <img class="sprite" :src="spriteFront" alt=""/>
     </div>
     <h2 v-else>Enter a correct Pokemon Name.</h2>
   </div>
@@ -69,5 +69,8 @@ export default {
 <style scoped>
 h2{
     text-transform: capitalize;
+}
+.sprite{
+  height: 20vh;
 }
 </style>

@@ -2,7 +2,8 @@
     <router-link :to="pokemonPath" class="router-link">
         <div class="pokemon-card">
             <h1>{{pokemon.name}}</h1>
-            <h2>{{numberPath}}</h2>
+            <h2>#{{this.numberPath.toString().padStart(3, "0")}}</h2>
+            <img class="sprite" :src="iconSprite"/>
         </div>
     </router-link>
 </template>
@@ -21,6 +22,9 @@ export default {
             let str = this.pokemon.url
             let arr = str.split('/');
             return arr[arr.length-2]
+        },
+        iconSprite: function() {
+            return `https://img.pokemondb.net/sprites/sword-shield/icon/${this.pokemon.name}.png`
         }
     }
 }
