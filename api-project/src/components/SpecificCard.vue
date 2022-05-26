@@ -1,9 +1,9 @@
 <template>
     <router-link :to="pokemonPath" class="router-link">
         <div class="pokemon-card">
-            <h2>{{pokemon.name}}</h2>
-            <h3>#{{this.numberPath.toString().padStart(3, "0")}}</h3>
-            <img class="sprite" :src="iconSprite"/>
+            <h1>{{pokemon.name}}</h1>
+            <h1>#{{this.numberPath.toString().padStart(3, "0")}}</h1>
+            <img class="sprite" :src="iconSprite" :alt="altText"/>
         </div>
     </router-link>
 </template>
@@ -25,6 +25,9 @@ export default {
         },
         iconSprite: function() {
             return `https://img.pokemondb.net/sprites/sword-shield/icon/${this.pokemon.name}.png`
+        },
+        altText: function() {
+            return this.pokemon.name
         }
     }
 }
@@ -34,14 +37,14 @@ export default {
 .router-link,
 .router-link:visited,
 .router-link:link {
-    background-color: #6279B8;
-    color: black;
+    background-color: var(--main-black);
+    color: white;
     width: 10%;
     border-radius: 10px;
     margin: 1rem;
     padding: 1rem 1rem;
 }
-h2{
+h1{
     text-transform: capitalize;
 }
 </style>

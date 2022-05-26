@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is a specific region page</h1>
+    <h1 class="title">{{regionName}} Region</h1>
     <div class="flex-container">
       <SpecificCard
       v-for="(pokemon, index) in pokemons"
@@ -96,6 +96,12 @@ export default {
   created: function (){
     this.fetchData();
   },
+  computed: {
+    regionName: function() {
+      let path = this.pathname || window.location.pathname;
+      return path.split('/').pop();
+    }
+  }
 }
 </script>
 
@@ -105,5 +111,9 @@ export default {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+h1{
+  text-transform: capitalize;
+  color:white;
 }
 </style>

@@ -21,12 +21,17 @@ export default {
 .router-link,
 .router-link:visited,
 .router-link:link {
-    background-color: #6279B8;
-    color: black;
-    width: 22%;
+    width: 100%;
     border-radius: 10px;
     margin: 1rem;
-    padding: 1rem 1rem;
+}
+button{
+    width: 5vw;
+    margin: 1rem;
+    background-color: var(--main-black);
+    color:white;
+    height: 5vh;
+    border-radius: 10px;
 }
 h1{
     text-transform: capitalize;

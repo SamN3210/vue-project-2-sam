@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is a region page</h1>
+    <h1 class="title">All Regions</h1>
     <div class="button-container">
       <RegionButton
       v-for="region in regions"
@@ -60,5 +60,8 @@ export default {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+.title {
+  color:white;
 }
 </style>
